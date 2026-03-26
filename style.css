@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928DAB); /* Beautiful purple-ish dark gradient */
+}
+
+.calculator-container {
+    padding: 20px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.calculator {
+    width: 320px;
+}
+
+.display {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    text-align: right;
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.history {
+    min-height: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.current {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    word-wrap: break-word;
+    overflow-x: auto;
+}
+
+/* Hide scrollbar for display */
+.current::-webkit-scrollbar {
+    display: none;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.btn {
+    padding: 20px;
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-operator {
+    background: rgba(255, 149, 0, 0.15); /* Soft Orange */
+    color: #ff9500;
+    border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+.btn-operator:hover {
+    background: rgba(255, 149, 0, 0.25);
+}
+
+.btn-action {
+    background: rgba(255, 59, 48, 0.15); /* Soft Red */
+    color: #ff3b30;
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.btn-action:hover {
+    background: rgba(255, 59, 48, 0.25);
+}
+
+.btn-equal {
+    background: #ff9500;
+    color: #fff;
+    font-weight: 600;
+    grid-column: span 2; /* Make '=' span 2 columns */
+    box-shadow: 0 5px 15px rgba(255, 149, 0, 0.3);
+}
+
+.btn-equal:hover {
+    background: #ffaa33;
+    box-shadow: 0 8px 20px rgba(255, 149, 0, 0.4);
+}
+
+.btn-zero {
+    grid-column: span 2;
+    text-align: left;
+    padding-left: 30px;
+}
